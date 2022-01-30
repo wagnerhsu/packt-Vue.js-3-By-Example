@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Simple Vue3</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="node_modules/vue/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <p>{{message}}</p>
+      <input v-model="message"></input>
+      <button @click="increment">increment</button>
+      count: {{count}}
+    </div>
+    <script>
+      const Counter = {
+        data() {
+          return {
+            count: 0,
+            message:"Hello"
+          };
+        },
+        methods: {
+          increment() {
+            this.count++;
+          },
+        },
+      };
+      Vue.createApp(Counter).mount("#app");
+    </script>
+  </body>
+</html>
