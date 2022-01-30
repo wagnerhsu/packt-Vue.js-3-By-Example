@@ -15,7 +15,9 @@
   <body>
     <div id="app">
       <p>{{message}}</p>
+      <p>{{reversedMessage}}</p>
       <input v-model="message"></input>
+      <br>
       <button @click="increment">increment</button>
       count: {{count}}
     </div>
@@ -26,6 +28,11 @@
             count: 0,
             message:"Hello"
           };
+        },
+        computed: {
+          reversedMessage() {
+            return this.message.split(' ').reverse().join(' ')
+          }
         },
         methods: {
           increment() {
